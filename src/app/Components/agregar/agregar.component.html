@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="mb-3">
+        <label class="form-label">Responsable</label>
+        <input type="text" class="form-control" id="responsableTarea" name="responsable" 
+         [(ngModel)]="nuevaTarea.responsable" placeholder="Quien debe hacer la tarea">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Tarea</label>
+        <textarea class="form-control" id="descripcionTarea" name="tarea" 
+        [(ngModel)]="nuevaTarea.tarea" placeholder="Descripcion de la tarea" rows="3"></textarea>
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)="agregarTarea()" >Agregar</button>
+        <button class="btn btn-danger" [routerLink]="['/home']" >Descartar</button>
+    </div>
+</div>

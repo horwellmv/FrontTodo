@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="mb-3">
+        <label class="form-label">Responsable</label>
+        <input type="text" class="form-control" id="responsableTarea" name="responsable"
+            [(ngModel)]="tareaEditada.responsable" placeholder="Quien debe hacer la tarea">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tarea</label>
+        <textarea class="form-control" id="descripcionTarea" name="tarea" [(ngModel)]="tareaEditada.tarea"
+            placeholder="Descripcion de la tarea" rows="3"></textarea>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="activa" [(ngModel)]="tareaEditada.activa">
+        <label class="form-check-label" for="flexCheckChecked">
+            Tarea completada?
+        </label>
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)="editarTarea()">Guardar cambios</button>
+        <button class="btn btn-danger" [routerLink]="['/home']">Descartar</button>
+    </div>
+</div>

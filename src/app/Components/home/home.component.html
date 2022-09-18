@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Lista de Tareas</h1>
+    <button class="btn btn-dark" [routerLink]="['/agregar']">Nueva</button>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tarea</th>
+                <th scope="col">Responsable</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tarea of listaTareas">
+                <th scope="row">{{tarea.id}}</th>
+                <td>{{tarea.tarea}}</td>
+                <td>{{tarea.responsable}}</td>
+
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="activa" [(ngModel)]="tarea.activa"
+                            checked disabled>
+                        <label class="form-check-label" for="flexCheckChecked"></label>
+                    </div>
+                </td>
+
+
+                <td>
+                    <button class="btn btn-primary" [routerLink]="['/editar/',tarea.id]">Editar</button>
+                    <button class="btn btn-success" (click)="eliminarTarea(tarea.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
